@@ -1,7 +1,13 @@
 #include "monty.h"
 
+/**
+* PallStack - print all the values on the stack 
+* starting from the top of the stack
+* @stack: pointer to top the stack
+* @line_number: number of the line
+*/
 
-void pall (stack_t **stack, unsigned int line_number)
+void PallStack (stack_t **stack, unsigned int line_number)
 {
     stack_t *tmp = *stack;
     tmp = *stack;
@@ -16,12 +22,12 @@ void pall (stack_t **stack, unsigned int line_number)
 }
 
 /**
-*pint_func - print the value top of the stack
+* Pint_Stack - print the value top of the stack
 *@stack: pointer to top the stack
 *@line_number: number of the line
 */
 
-void pint_func(stack_t **stack, unsigned int line_number);
+void PintStack(stack_t **stack, unsigned int line_number);
 {
     if (stack == NULL || *stack == NULL)
     {
@@ -33,12 +39,12 @@ void pint_func(stack_t **stack, unsigned int line_number);
 
 
 /**
-*pop - remove the top element of the stack
+*PopStack - remove the top element of the stack
 *@stack: pointer to top the stack
 *@line_number: number of the line
 */
 
-void pop_func(stack_t **stack, unsigned int line_number);
+void PopStack(stack_t **stack, unsigned int line_number);
 {
     stack_t *j;
     if(stack == NULL || *stack == NULL)
@@ -51,12 +57,12 @@ void pop_func(stack_t **stack, unsigned int line_number);
 }
 
 /**
-*nop_func - doesn´t do anything
+*NopStack - doesn´t do anything
 *@stack: pointer to top the stack
 *@line_number: number of the line
 */
 
-void nop_func(stack_t **stack, unsigned int line_number);
+void NopStack(stack_t **stack, unsigned int line_number);
 {
     (void) stack;
     (void) line_number;
