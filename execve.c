@@ -3,7 +3,7 @@
 *execve - execute the opcode
 *@op: line with instructions
 *@stack: pointer to top the stack
-*@line_num: number of a line
+*@line_num: number of line
 *Return - none
 */
 void execve (stack_t **stack, unsigned int line_number)
@@ -17,7 +17,7 @@ void execve (stack_t **stack, unsigned int line_number)
         {"swap", swapStack},
         {"add", addStack},
         {"nop", nopStack},
-        {NULL, NULL},        
+        {NULL, NULL},
 };
 
 for (i = 0; ops[i].opcode; i++)
