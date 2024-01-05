@@ -12,7 +12,7 @@ void execve (stack_t **stack, unsigned int line_number)
     instruction_t ops [] = {
         {"push", pushStack},
         {"pall", pallStack},
-        {"pint", pint_Stack},
+        {"pint", pintStack},
         {"pop", popStack},
         {"swap", swapStack},
         {"add", addStack},
