@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
-* PallStack - print all the values on the stack 
+* pallStack - print all the values on the stack 
 * starting from the top of the stack
 * @stack: pointer to top the stack
 * @line_number: number of the line
 */
 
-void PallStack (stack_t **stack, unsigned int line_number)
+void pallStack (stack_t **stack, unsigned int line_number)
 {
     stack_t *tmp = *stack;
     tmp = *stack;
@@ -22,12 +22,12 @@ void PallStack (stack_t **stack, unsigned int line_number)
 }
 
 /**
-* Pint_Stack - print the value top of the stack
+* pint_Stack - print the value top of the stack
 *@stack: pointer to top the stack
 *@line_number: number of the line
 */
 
-void PintStack(stack_t **stack, unsigned int line_number);
+void pintStack(stack_t **stack, unsigned int line_number);
 {
     if (stack == NULL || *stack == NULL)
     {
@@ -39,12 +39,12 @@ void PintStack(stack_t **stack, unsigned int line_number);
 
 
 /**
-*PopStack - remove the top element of the stack
+*popStack - remove the top element of the stack
 *@stack: pointer to top the stack
 *@line_number: number of the line
 */
 
-void PopStack(stack_t **stack, unsigned int line_number);
+void popStack(stack_t **stack, unsigned int line_number);
 {
     stack_t *j;
     if(stack == NULL || *stack == NULL)
@@ -57,13 +57,14 @@ void PopStack(stack_t **stack, unsigned int line_number);
 }
 
 /**
-*NopStack - doesn´t do anything
+*nopStack - doesn´t do anything
 *@stack: pointer to top the stack
 *@line_number: number of the line
 */
 
-void NopStack(stack_t **stack, unsigned int line_number);
+void nopStack(stack_t **stack, unsigned int line_number);
 {
     (void) stack;
     (void) line_number;
 }
+

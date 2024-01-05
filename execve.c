@@ -6,17 +6,17 @@
 *@line_num: number of a line
 *Return - none
 */
-void execve (stack_t **stack, unsigned int line_number);
+void execve (stack_t **stack, unsigned int line_number)
 {
     int i;
     instruction_t ops [] = {
-        {"push", pushstack},
-        {"pall", pallfunc},
-        {"pint", pintfunc},
-        {"pop", popfunc},
-        {"swap", swapfunc},
-        {"add", addfunc},
-        {"nop", nopfunc},
+        {"push", pushStack},
+        {"pall", pallStack},
+        {"pint", pint_Stack},
+        {"pop", popStack},
+        {"swap", swapStack},
+        {"add", addStack},
+        {"nop", nopStack},
         {NULL, NULL},        
 };
 

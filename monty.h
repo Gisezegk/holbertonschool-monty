@@ -1,9 +1,15 @@
-#ifndef FILES
-#define FILES
-
+#ifndef _MONTY_
+#define _MONTY_
 #include <stdio.h>
 #include <stdlib.h>
+#include <stddef.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #include <unistd.h>
+#include <ctype.h>
+
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -21,7 +27,7 @@ typedef struct stack_s
         struct stack_s *next;
 } stack_t;
 
-///
+
 
 /**
  * struct instruction_s - opcode and its function
@@ -36,5 +42,27 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+/* opcode functions */
+char *get_op(char *line, unsigned int line_number);
+void execve (stack_t **stack, unsigned int line_number);
+
+
+/* Stack functions */
+void pushStack(stack_t **stack, unsigned int line_number);
+void pallStack(stack_t **stack, unsigned int line_number);
+void pintStack(stack_t **stack, unsigned int line_number);
+void popStack(stack_t **stack, unsigned int line_number);
+void swapStack(stack_t **stack, unsigned int line_number);
+void addStack(stack_t **stack, unsigned int line_number);
+void nopStack(stack_t **stack, unsigned int line_number);
+
+
+void freestack(stack_t *head);
+void freeNode(stack_t *node);
+
+
+extern char *value;
+
 
 #endif
