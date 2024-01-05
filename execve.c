@@ -1,12 +1,12 @@
 #include "monty.h"
 /**
-*execve - execute the opcode
+*execute - execute the opcode
 *@op: line with instructions
 *@stack: pointer to top the stack
 *@line_num: number of line
 *Return - none
 */
-void execve (stack_t **stack, unsigned int line_number)
+void execute (stack_t **stack, unsigned int line_number)
 {
     int i;
     instruction_t ops [] = {
