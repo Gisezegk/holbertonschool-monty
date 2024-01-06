@@ -6,7 +6,7 @@
 *@line_num: number of line
 *Return - none
 */
-void execute (stack_t **stack, unsigned int line_number, char *op)
+void execute(stack_t **stack, unsigned int line_number, char *op)
 {
     int i;
     instruction_t ops [] = {
