@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     size_t len = 0;
     int read = 0, result = 0;
     unsigned int line_number = 0;
-    stack_t **stack = NULL;
+    stack_t *stack = NULL;
 
     if (argc != 2)
     {
@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
         opcode = get_op(charged_line, line_number);
         if (opcode == NULL)
                 continue;
-        result = execute(stack_t **stack, unsigned int line_number, char *op);
+        result = execute(opcode, line_number);
         if (result == -1)
                 exit(EXIT_FAILURE);
     }
