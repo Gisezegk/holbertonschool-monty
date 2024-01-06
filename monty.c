@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     FILE *file;
     char *charged_line = NULL, *opcode = NULL;
     size_t len = 0;
-    int read = 0, result = 0;
+    int read = 0;
     unsigned int line_number = 0;
     stack_t *stack = NULL;
 
@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
         opcode = get_op(charged_line, line_number);
         if (opcode == NULL)
                 continue;
-        if (execute(&stack, line_number, opcode) == -1);
+        if (execute(&stack, line_number, opcode) == -1)
                 exit(EXIT_FAILURE);
     }
     free(charged_line);
