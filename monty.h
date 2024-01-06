@@ -45,7 +45,7 @@ typedef struct instruction_s
 
 /* opcode functions */
 char *get_op(char *line, unsigned int line_number);
-void execute (stack_t **stack, unsigned int line_number)
+void execute(stack_t **stack, unsigned int line_number);
 
 /* Stack functions */
 void pushStack(stack_t **stack, unsigned int line_number);
@@ -62,6 +62,7 @@ void freeNode(stack_t *node);
 
 
 extern char *value;
+#define DEL "\n \r\t"
 
 
 #endif
