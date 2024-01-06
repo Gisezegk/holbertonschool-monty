@@ -45,7 +45,7 @@ typedef struct instruction_s
 
 /* opcode functions */
 char *get_op(char *line, unsigned int line_number);
-void execute(stack_t **stack, unsigned int line_number, char *op);
+int execute(stack_t **stack, unsigned int line_number, char *op);
 
 /* Stack functions */
 void pushStack(stack_t **stack, unsigned int line_number);
