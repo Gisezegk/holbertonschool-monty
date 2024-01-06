@@ -21,16 +21,17 @@ void execute (stack_t **stack, unsigned int line_number, char *op)
 };
 
 for (i = 0; ops[i].opcode; i++)
-if (strcmp(op, ops[i].opcode) == 0)
 {
-    ops[i].f(stack, line_num);
-    return;
+    if (strcmp(op, ops[i].opcode) == 0)
+    {
+        ops[i].f(stack, line_number);
+        return;
+    }
 }
 
 if (strlen (op) != 0 && op[0] != '#')
-{
-    printf (L%u: unknown instruction %s\n, line_num, op);
-    exit (EXIT_FAILURE);
-}
-
+    {
+        printf("L%u: unknown instruction %s\n", line_number, op);
+        exit (EXIT_FAILURE);
+    }
 }
