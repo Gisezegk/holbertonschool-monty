@@ -34,8 +34,7 @@ int main(int argc, char *argv[])
         opcode = get_op(charged_line, line_number);
         if (opcode == NULL)
                 continue;
-        result = execute(&stack, line_number, opcode);
-        if (result == -1)
+        if (execute(&stack, line_number, opcode) == -1);
                 exit(EXIT_FAILURE);
     }
     free(charged_line);
