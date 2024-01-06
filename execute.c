@@ -17,22 +17,21 @@ int execute(stack_t **stack, unsigned int line_number, char *op)
         {"swap", swapStack},
         {"add", addStack},
         {"nop", nopStack},
-        {NULL, NULL},
+        {NULL, NULL}
 };
 
 for (i = 0; ops[i].opcode; i++)
-{
+
     if (strcmp(op, ops[i].opcode) == 0)
     {
         ops[i].f(stack, line_number);
-        return 0;
+        return (0);
     }
-}
 
 if (strlen (op) != 0 && op[0] != '#')
     {
         printf("L%u: unknown instruction %s\n", line_number, op);
         exit (EXIT_FAILURE);
     }
-    return -1;
+    return (-1);
 }
