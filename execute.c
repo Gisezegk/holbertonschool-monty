@@ -6,7 +6,7 @@
 *@line_num: number of line
 *Return - none
 */
-void execute(stack_t **stack, unsigned int line_number, char *op)
+int execute(stack_t **stack, unsigned int line_number, char *op)
 {
     int i;
     instruction_t ops [] = {
@@ -25,7 +25,7 @@ for (i = 0; ops[i].opcode; i++)
     if (strcmp(op, ops[i].opcode) == 0)
     {
         ops[i].f(stack, line_number);
-        return;
+        return 0;
     }
 }
 
@@ -34,4 +34,5 @@ if (strlen (op) != 0 && op[0] != '#')
         printf("L%u: unknown instruction %s\n", line_number, op);
         exit (EXIT_FAILURE);
     }
+    return -1;
 }
