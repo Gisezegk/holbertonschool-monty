@@ -53,7 +53,7 @@ void swapStack(stack_t **stack, unsigned int line_number)
 *@stack: pointer to top the stack
 */
 
-void addStack(stack_t **stack, unsigned int line_number);
+void addStack(stack_t **stack, unsigned int line_number)
 {
 	stack_t *f;
 	int a;
