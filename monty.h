@@ -61,7 +61,7 @@ void freestack(stack_t *head);
 void freeNode(stack_t *node);
 
 
-extern char *value;
+char *value;
 #define DEL "\n \r\t"
 
 
