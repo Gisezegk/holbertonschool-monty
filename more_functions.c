@@ -65,9 +65,9 @@ void addStack(stack_t **stack, unsigned int line_number)
 	}
 
 	f = *stack;
-	a = j->n + j->next->n;
+	a = f->n + f->next->n;
 	f->next->n = a;
 
-	*stack = j->next;
-	free(j);
+	*stack = f->next;
+	free(f);
 }
