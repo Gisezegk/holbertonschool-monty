@@ -29,13 +29,10 @@ void pallStack(stack_t **stack, unsigned int line_number)
 
 void pushStack(stack_t **stack, unsigned int line_number)
 {
-	stack_t *nodo;
-	char *j;
-
-	j = strtok(NULL, DEL);
 	stack_t *nodo = NULL;
     int n, i;
     char *j = strtok(NULL, " \t\n");
+
 	if (j == NULL)
 	{
 		printf("L%u: usage: push integer\n", line_number);
