@@ -11,6 +11,7 @@ void pallStack(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp = *stack;
 	tmp = *stack;
+
 	(void) line_number;
 
 	while (tmp)
@@ -77,7 +78,8 @@ void pintStack(stack_t **stack, unsigned int line_number)
 void popStack(stack_t **stack, unsigned int line_number)
 {
 	stack_t *j;
-	if(stack == NULL || *stack == NULL)
+
+	if (stack == NULL || *stack == NULL)
 	{
 		printf("L%u: can't pop an empty stack\n", line_number);
 		exit(EXIT_FAILURE);
