@@ -10,6 +10,20 @@
 #include <unistd.h>
 #include <ctype.h>
 
+/**
+ * struct var_s - struct to contain the main variables of the monty interpreter
+ * @queue: flag to determine if in stack vs queue mode
+ * @stack_len: length of the stack
+ */
+
+typedef struct var_s
+{
+	int queue;
+	size_t stack_len;
+} var_t;
+
+/* global struct to hold flag for queue an stack length */
+extern var_t var;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -45,7 +59,7 @@ typedef struct instruction_s
 
 /* opcode functions */
 char *get_op(char *line, unsigned int line_number);
-int execute(stack_t **stack, unsigned int line_number, char *op);
+int execute(char *opcode, stack_t **stack, unsigned int line_number);
 
 /* Stack functions */
 void pushStack(stack_t **stack, unsigned int line_number);
@@ -61,7 +75,7 @@ void freestack(stack_t *head);
 void freeNode(stack_t *node);
 
 
-char *value;
+extern char *j;
 #define DEL "\n \r\t"
 
 

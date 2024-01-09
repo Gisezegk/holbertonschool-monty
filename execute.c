@@ -6,7 +6,7 @@
 *@line_num: number of line
 *Return - none
 */
-int execute(stack_t **stack, unsigned int line_number, char *op)
+int execute(char *opcode, stack_t **stack, unsigned int line_number)
 {
     int i;
     instruction_t ops [] = {
@@ -21,17 +21,13 @@ int execute(stack_t **stack, unsigned int line_number, char *op)
 };
 
 for (i = 0; ops[i].opcode; i++)
-
-    if (strcmp(op, ops[i].opcode) == 0)
+{
+    if (strcmp(ops[i].opcode, opcode) == 0)
     {
         ops[i].f(stack, line_number);
         return (0);
     }
-
-if (strlen (op) != 0 && op[0] != '#')
-    {
-        printf("L%u: unknown instruction %s\n", line_number, op);
-        exit (EXIT_FAILURE);
-    }
-    return (-1);
+}
+fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
+	exit(EXIT_FAILURE);
 }
