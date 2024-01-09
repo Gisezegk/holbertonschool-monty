@@ -35,7 +35,7 @@ void pushStack(stack_t **stack, unsigned int line_number)
 
 	if (j == NULL)
 	{
-		printf("L%u: usage: push integer\n", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	for (i = 0; j[i] != '\0'; i++)
