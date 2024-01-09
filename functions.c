@@ -9,17 +9,17 @@
 
 void pallStack(stack_t **stack, unsigned int line_number)
 {
-    stack_t *tmp = *stack;
-    tmp = *stack;
+	stack_t *tmp = *stack;
+	tmp = *stack;
 
-    (void) line_number;
+	(void) line_number;
 
-    while (tmp)
-    {
-        printf("%d\n", tmp->n);
-        tmp = tmp->next;
+	while (tmp)
+	{
+		printf("%d\n", tmp->n);
+		tmp = tmp->next;
 
-    }
+	}
 }
 
 /**
@@ -30,20 +30,20 @@ void pallStack(stack_t **stack, unsigned int line_number)
 
 void pushStack(stack_t **stack, unsigned int line_number)
 {
-    stack_t *nodo;
-    char *j;
+	stack_t *nodo;
+	char *j;
 
-    j = strtok(NULL, DEL);
-    if (j == NULL)
-    {
-        printf("L%u: usage: push integer\n", line_number);
-        exit(EXIT_FAILURE);
-    }
+	j = strtok(NULL, DEL);
+	if (j == NULL)
+	{
+		printf("L%u: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 nodo = malloc(sizeof(stack_t));
 if (nodo == NULL)
 {
-    printf("Error: malloc failed\n");
-    exit(EXIT_FAILURE);
+	printf("Error: malloc failed\n");
+	exit(EXIT_FAILURE);
 }
 nodo->n = atoi(j);
 nodo->prev = NULL;
@@ -61,12 +61,12 @@ if (*stack != NULL)
 
 void pintStack(stack_t **stack, unsigned int line_number)
 {
-    if (stack == NULL || *stack == NULL)
-    {
-        fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
-        exit(EXIT_FAILURE);
-    }
-    printf("%d\n", (*stack)->n);
+	if (stack == NULL || *stack == NULL)
+	{
+		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", (*stack)->n);
 }
 
 /**
@@ -77,16 +77,16 @@ void pintStack(stack_t **stack, unsigned int line_number)
 
 void popStack(stack_t **stack, unsigned int line_number)
 {
-    stack_t *j;
+	stack_t *j;
 
-    if (stack == NULL || *stack == NULL)
-    {
-        printf("L%u: can't pop an empty stack\n", line_number);
-        exit(EXIT_FAILURE);
-    }
-    j = *stack;
-    *stack = (*stack)->next;
-    free(j);
+	if (stack == NULL || *stack == NULL)
+	{
+		printf("L%u: can't pop an empty stack\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	j = *stack;
+	*stack = (*stack)->next;
+	free(j);
 }
 
 /**
@@ -97,6 +97,6 @@ void popStack(stack_t **stack, unsigned int line_number)
 
 void nopStack(stack_t **stack, unsigned int line_number)
 {
-    (void) stack;
-    (void) line_number;
+	(void) stack;
+	(void) line_number;
 }
