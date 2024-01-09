@@ -31,15 +31,15 @@ void pushStack(stack_t **stack, unsigned int line_number)
 {
     stack_t *nodo = NULL;
     int n, i;
-    *j = strtok(NULL, " \t\n");
+    char *j = strtok(NULL, " \t\n");
     if (j == NULL)
     {
         printf("L%u: usage: push integer\n", line_number);
         exit(EXIT_FAILURE);
     }
-    for (i = 0; value[i] != '\0'; i++)
+    for (i = 0; j[i] != '\0'; i++)
 	{
-		if (!isdigit(value[i]) && value[i] != '-')
+		if (!isdigit(j[i]) && j[i] != '-')
 		{
 			fprintf(stderr, "L%u: usage: push integer\n", line_number);
 			exit(EXIT_FAILURE);
