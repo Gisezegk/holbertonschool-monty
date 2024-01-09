@@ -41,5 +41,4 @@ int main(int argc, char *argv[])
     fclose(file);
     freestack(stack);
     exit(EXIT_FAILURE);
-    return (0);
 }
