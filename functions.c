@@ -29,27 +29,40 @@ void pallStack(stack_t **stack, unsigned int line_number)
 
 void pushStack(stack_t **stack, unsigned int line_number)
 {
-    stack_t *nodo;
-    char *j;
-
-    j = strtok(NULL, DEL);
+    stack_t *nodo = NULL;
+    int n, i;
+    *j = strtok(NULL, " \t\n");
     if (j == NULL)
     {
         printf("L%u: usage: push integer\n", line_number);
         exit(EXIT_FAILURE);
     }
-nodo = malloc(sizeof(stack_t));
-if (nodo == NULL)
-{
-    printf("Error: malloc failed\n");
-    exit(EXIT_FAILURE);
-}
-nodo->n = atoi(j);
-nodo->prev = NULL;
-nodo->next = *stack;
-if (*stack != NULL)
-(*stack)->prev = nodo;
-*stack = nodo;
+    for (i = 0; value[i] != '\0'; i++)
+	{
+		if (!isdigit(value[i]) && value[i] != '-')
+		{
+			fprintf(stderr, "L%u: usage: push integer\n", line_number);
+			exit(EXIT_FAILURE);
+		}
+	}
+    n = atoi(j);
+    nodo = malloc(sizeof(stack_t));
+    if (nodo == NULL)
+    {
+        freestack(nodo);
+        fprintf(stderr, "Error: malloc failed\n");
+        exit(EXIT_FAILURE);
+    }
+    nodo->n = n;
+    nodo->prev = NULL;
+    if (!*stack)
+            nodo->next = NULL;
+    else
+    {
+        nodo->next = *stack;
+        (*stack)->prev = nodo;
+    }
+    *stack = nodo;
 }
 
 /**
