@@ -1,9 +1,9 @@
 #include "monty.h"
 /**
 *execute - execute the opcode
-*@op: line with instructions
+*@opcode: line with instructions
 *@stack: pointer to top the stack
-*@line_num: number of line
+*@line_number: number of line
 *Return - none
 */
 int execute(char *opcode, stack_t **stack, unsigned int line_number)
@@ -29,5 +29,5 @@ for (i = 0; ops[i].opcode; i++)
     }
 }
 fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
-	exit(EXIT_FAILURE);
+exit(EXIT_FAILURE);
 }
