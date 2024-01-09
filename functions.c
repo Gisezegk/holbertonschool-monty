@@ -110,6 +110,6 @@ void popStack(stack_t **stack, unsigned int line_number)
 
 void nopStack(stack_t **stack, unsigned int line_number)
 {
-	(void) stack;
+	(void) **stack;
 	(void) line_number;
 }
