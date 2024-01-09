@@ -36,10 +36,15 @@ int main(int argc, char *argv[])
 				continue;
 		result = execute(opcode, &stack, line_number);
 		if (result == -1)
+		{
+				free(charged_line);
+				fclose(file);
+				freestack(stack);
 				exit(EXIT_FAILURE);
+		}
 	}
 	free(charged_line);
 	fclose(file);
 	freestack(stack);
-	exit(EXIT_FAILURE);
+	exit(EXIT_SUCCESS);
 }
