@@ -27,7 +27,9 @@ for (i = 0; ops[i].opcode; i++)
         ops[i].f(stack, line_number);
         return (0);
     }
-}
+
 fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
-exit(EXIT_FAILURE);
+	exit(EXIT_FAILURE);
+
+    }
 }
