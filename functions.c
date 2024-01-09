@@ -30,8 +30,8 @@ void pallStack(stack_t **stack, unsigned int line_number)
 void pushStack(stack_t **stack, unsigned int line_number)
 {
 	stack_t *nodo = NULL;
-    int n, i;
-    char *j = strtok(NULL, " \t\n");
+	int n, i;
+	char *j = strtok(NULL, " \t\n");
 
 	if (j == NULL)
 	{
@@ -46,24 +46,24 @@ void pushStack(stack_t **stack, unsigned int line_number)
 			exit(EXIT_FAILURE);
 		}
 	}
-    n = atoi(j);
-    nodo = malloc(sizeof(stack_t));
-    if (nodo == NULL)
-    {
-        freestack(nodo);
-        fprintf(stderr, "Error: malloc failed\n");
-        exit(EXIT_FAILURE);
-    }
-    nodo->n = n;
-    nodo->prev = NULL;
-    if (!*stack)
-            nodo->next = NULL;
-    else
-    {
-        nodo->next = *stack;
-        (*stack)->prev = nodo;
-    }
-    *stack = nodo;
+	n = atoi(j);
+	nodo = malloc(sizeof(stack_t));
+	if (nodo == NULL)
+	{
+		freestack(nodo);
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
+	nodo->n = n;
+	nodo->prev = NULL;
+	if (!*stack)
+			nodo->next = NULL;
+	else
+	{
+		nodo->next = *stack;
+		(*stack)->prev = nodo;
+	}
+	*stack = nodo;
 }
 
 /**
