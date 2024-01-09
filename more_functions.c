@@ -55,12 +55,12 @@ void swapStack(stack_t **stack, unsigned int line_number)
 
 void addStack(stack_t **stack, unsigned int line_number)
 {
-	stack_t *f;
-	int a;
+	stack_t *f = *stack;
+	int a = 0;
 
-	if (!stack || !(*stack) || !(*stack)->next)
+	if (!*stack || !(*stack) || !(*stack)->next)
 	{
-		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
+		fprintf(stderr, "L<line_number>: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
